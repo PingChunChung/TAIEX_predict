@@ -6,8 +6,31 @@
 ## scraper
 爬取Dcard、Mobile01、PTT三大論壇的資料
 
+PTT使用一般request爬蟲  
+```
+ptt_article_url.py # 獲取文章的url
+get_content_json.py # 從文章url爬取所有文章的資訊
+```
+
+Dcard透過api2.0進行爬蟲
+```
+
+Dcard_article_url.py  # 獲得Dcard文章的編號
+get_content_json.py # 透過文章編號，分別使用API的文章內容、留言、以及子留言獲取內容
+```
+
+Mobile01使用selenium
+```
+mobile01_article_scraper.py : 爬取mobile01股票版的文章連結
+check_scrapy.py : 比對現有資料，確認需要補爬的文章連結(第一次爬可以跳過這個步驟，但是要先去改3.的檔案路徑)
+mobile01_data_scraper.py : 爬取文章內容
+```
+
 ## TAIEX
 獲取大盤加權指數
+
+使用yfinance套件獲取大盤加權指數
+
 
 ## MySQL
 使用PyMySQL將原始資料匯入資料庫
